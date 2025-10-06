@@ -1,0 +1,41 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mod="http://www.adcb.com/esb/mnt/Customer/ModCustomerConsent.xsd" xmlns:head="http://www.adcb.com/esb/common/header.xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mod:fetchCustomerConsentReqMsg>
+         <head:header>
+            <head:serviceName>ModCustomerConsent</head:serviceName>
+            <head:versionNo>1.0</head:versionNo>
+            <head:serviceAction>Modify</head:serviceAction>   
+            <head:sysRefNumber>#sysRefNumber#</head:sysRefNumber>
+            <head:senderID>#senderID#</head:senderID>
+            <head:reqTimeStamp>#reqTimeStamp#</head:reqTimeStamp>      
+         </head:header>
+         <mod:fetchCustomerConsentReq>
+            <mod:consentMobileNumber>#custMobile#</mod:consentMobileNumber>
+            <mod:consentEmailAddress>#custEmail#</mod:consentEmailAddress>
+         </mod:fetchCustomerConsentReq>
+      </mod:fetchCustomerConsentReqMsg>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+<-------------------------------------------------------------------------------->
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mod="http://www.adcb.com/esb/mnt/Customer/ModCustomerConsent.xsd" xmlns:head="http://www.adcb.com/esb/common/header.xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mod:fetchCustomerConsentReqMsg>
+         <head:header>
+            <head:serviceName>ModCustomerConsent</head:serviceName>
+            <head:versionNo>1.0</head:versionNo>
+            <head:serviceAction>Modify</head:serviceAction>   
+            <head:sysRefNumber>${sysRefNumber!""}</head:sysRefNumber>
+            <head:senderID>${senderID!""}</head:senderID>
+            <head:reqTimeStamp>${reqTimeStamp!""}</head:reqTimeStamp>      
+         </head:header>
+         <mod:fetchCustomerConsentReq>
+            <mod:consentMobileNumber>${custMobile!""}</mod:consentMobileNumber>
+            <mod:consentEmailAddress>${custEmail!""}</mod:consentEmailAddress>
+         </mod:fetchCustomerConsentReq>
+      </mod:fetchCustomerConsentReqMsg>
+   </soapenv:Body>
+</soapenv:Envelope>
