@@ -39,3 +39,21 @@
       </mod:fetchCustomerConsentReqMsg>
    </soapenv:Body>
 </soapenv:Envelope>
+
+----------------------------------------------------------------------------------->
+
+   private String extractSoapEnvelope(String xml) {
+	        if (xml == null || xml.isEmpty()) {
+	            return xml;
+	        }
+
+	        // (?s) enables DOTALL mode so '.' also matches newlines
+	        Pattern pattern = Pattern.compile("(?s)<soapenv:Envelope.*?</soapenv:Envelope>");
+	        Matcher matcher = pattern.matcher(xml);
+
+	        if (matcher.find()) {
+	            return matcher.group(0).trim(); // Return only the matched envelope block
+	        } else {
+	            return xml.trim(); // fallback: return as-is if envelope not found
+	        }
+	    }
